@@ -94,6 +94,7 @@ class WMTS extends TileImage {
       urls: urls,
       wrapX: options.wrapX !== undefined ? options.wrapX : false,
       transition: options.transition,
+      apikey : options.apikey,
     });
 
     /**
@@ -121,6 +122,7 @@ class WMTS extends TileImage {
      */
     this.layer_ = options.layer;
 
+    this.apikey_ = options.apikey;
     /**
      * @private
      * @type {string}
@@ -276,6 +278,7 @@ class WMTS extends TileImage {
         'Request': 'GetTile',
         'Version': this.version_,
         'Format': this.format_,
+        'apikey': this.apikey_,
       });
     }
 
